@@ -37,14 +37,14 @@ class Student
   end
 
   def save
-    building.pry
+    binding.pry
     sql = <<-SQL
       INSERT INTO students (name, grade)
       VALUES (?, ?)
     SQL
 
     DB[:conn].execute(sql, @name, @grade
-    building.pry
+    binding.pry
   end
 
   def self.create(name:, grade:)
