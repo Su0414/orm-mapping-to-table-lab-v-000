@@ -27,7 +27,7 @@ class Student
     sql = <<-SQL
           DROP TABLE IF EXISTS students
              SQL
-          DB[:conn].execute(sql)
+    DB[:conn].execute(sql)
   end
 
   def save
@@ -35,7 +35,7 @@ class Student
           INSERT INTO students(name, grade)
           VALUES(?, ?)
              SQL
-             DB[:conn].execute(sql,self.name, self.grade)
+   DB[:conn].execute(sql, self.@name, self.@grade)
   end
 
   def self.create
